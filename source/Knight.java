@@ -5,9 +5,8 @@ public class Knight extends Fighter {
 
     @Override
     public double getCombatScore() {
-        // TODO: Find the way to get GROUND
         int GROUND = Battle.GROUND;
-        int combatScore;
+        double combatScore;
         if(Utility.isSquare(GROUND)) {
             combatScore = super.getBaseHp() * 2;
         } else {
@@ -18,6 +17,5 @@ public class Knight extends Fighter {
             }
         }
         return combatScore;
-//        return 1.0;
     }
 }
