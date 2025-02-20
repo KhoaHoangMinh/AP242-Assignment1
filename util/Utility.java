@@ -30,4 +30,13 @@ public class Utility {
 		int x = (int) Math.sqrt(num);
 		return x*x == num;
 	}
+
+	public static boolean isFibo(int n) {
+		return isSquare(5 * n * n + 4)
+				|| isSquare(5 * n * n - 4);
+	}
+	public static int findFiboIndex(int n) {
+		double fibo = 2.078087 * Math.log(n) + 1.672276;
+		return (int) Math.round(fibo);
+	}
 }
