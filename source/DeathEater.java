@@ -6,6 +6,6 @@ public class DeathEater extends Monster implements Combatable {
 
 	@Override
 	public double getCombatScore() {
-		return 1.0;
+		return getMana().getMagnitude();
 	}
 }
