@@ -55,4 +55,8 @@ public class Utility {
 		}
 		return (b == n) ? idx : -1;
 	}
+	public static double checkCombatScore(double n) {
+		if(n > 999) return 999;
+		else return n;
+	}
 }

@@ -6,17 +6,16 @@ public class Warrior extends Fighter {
 
     @Override
     public double getCombatScore() {
-        int GROUND = Battle.GROUND;
         double combatScore;
-        if(Utility.isPrime(GROUND)) {
+        if(Utility.isPrime(Battle.GROUND)) {
             combatScore = super.getBaseHp() * 2;
         } else {
             if(super.getWp() == 1) {
                 combatScore = super.getBaseHp();
             } else {
-                combatScore = (double) super.getBaseHp() / 10;
+                combatScore = super.getBaseHp() / 10.0;
             }
         }
-        return combatScore;
+        return Utility.checkCombatScore(combatScore);
     }
 }
