@@ -32,11 +32,27 @@ public class Utility {
 	}
 
 	public static boolean isFibo(int n) {
-		return isSquare(5 * n * n + 4)
-				|| isSquare(5 * n * n - 4);
+		if(n < 0) return false;
+		if(n == 0 || n == 1) return true;
+		int a = 0, b = 1;
+		while(b < n) {
+			int temp = b;
+			b += a;
+			a = temp;
+		}
+		return b == n;
 	}
 	public static int findFiboIndex(int n) {
-		double fibo = 2.078087 * Math.log(n) + 1.672276;
-		return (int) Math.round(fibo);
+		if(n < 0) return -1;
+		if(n == 0) return 0;
+		if(n == 1) return 1;
+		int a = 0, b = 1, idx = 1;
+		while(b < n) {
+			int temp = b;
+			b += a;
+			a = temp;
+			idx++;
+		}
+		return (b == n) ? idx : -1;
 	}
 }
